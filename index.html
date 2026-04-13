@@ -7,15 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <!-- ===================== SELETOR DE REGIÃO (1.ª visita) ===================== -->
 <div id="region-modal" class="region-overlay" style="display:none">
     <div class="region-card">
-        <img src="logoanas.png" alt="ANAS" class="region-logo">
-        <h2 class="region-title">Selecione a sua região</h2>
+        <h2 class="region-title">Escolha a sua região</h2>
         <p class="region-sub">Vamos mostrar os valores na sua moeda.</p>
         <div class="region-options">
             <button class="region-btn" onclick="selectRegion('angola')">
@@ -190,6 +189,9 @@
         <button class="btn-modal-back" onclick="closeDonationModal()">Escolher outro valor</button>
     </div>
 </div>
+
+<!-- ===================== NOTIFICAÇÕES TOAST ===================== -->
+<div id="toast-container" class="toast-container"></div>
 
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
@@ -461,6 +463,37 @@ function scrollToDonate() {
     document.getElementById('donate-section').scrollIntoView({ behavior:'smooth' });
 }
 
+// ── TOAST NOTIFICATIONS ───────────────────────────────────
+var toastPool    = DONOR_POOL.slice().sort(function(){ return Math.random()-0.5; });
+var toastIdx     = 0;
+var toastClrIdx  = 0;
+
+function showToast() {
+    if (toastIdx >= toastPool.length) {
+        toastPool.sort(function(){ return Math.random()-0.5; });
+        toastIdx = 0;
+    }
+    var d     = toastPool[toastIdx++];
+    var color = AVATAR_COLORS[toastClrIdx++ % AVATAR_COLORS.length];
+    var box   = document.getElementById('toast-container');
+
+    var t = document.createElement('div');
+    t.className = 'toast';
+    t.innerHTML =
+        '<div class="toast-av" style="background:' + color + '">' + getInitials(d.n) + '</div>' +
+        '<div class="toast-body"><strong class="toast-name">' + d.n + '</strong> acabou de ajudar</div>';
+    box.appendChild(t);
+
+    // Fade out e remove após 4.2s
+    setTimeout(function() {
+        t.classList.add('toast-out');
+        setTimeout(function(){ if (t.parentNode) t.parentNode.removeChild(t); }, 420);
+    }, 4200);
+
+    // Próximo: 10–15 segundos
+    setTimeout(showToast, 10000 + Math.random() * 5000);
+}
+
 // ── INIT ──────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
     var saved = localStorage.getItem('anas_region');
@@ -475,6 +508,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initDonorFeed();
     syncCounter();
     setTimeout(addNewDonor, 40000 + Math.random() * 50000);
+    setTimeout(showToast, 5000); // primeiro toast em 5s
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeDonationModal(); });
 });
 </script>
