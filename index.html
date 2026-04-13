@@ -1,146 +1,483 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Me ajuda a salvar a minha vida e da minha bebé | Vakinha</title>
+    <title>Benguela em estado crítico | ANAS — Apoio Emergencial</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="container header-content">
-            <img src="assets/vakinha_logo.webp" alt="Vakinha Logo" class="logo">
-            <nav class="nav-desktop">
-                <a href="#">Como ajudar</a>
-                <a href="#">Descubra</a>
-                <a href="#">Como funciona</a>
-                <a href="#">Buscar</a>
-                <a href="#">Minha conta</a>
-                <button class="btn-create">Faz uma vaquinha!</button>
-            </nav>
+
+<!-- ===================== SELETOR DE REGIÃO (1.ª visita) ===================== -->
+<div id="region-modal" class="region-overlay" style="display:none">
+    <div class="region-card">
+        <img src="logoanas.png" alt="ANAS" class="region-logo">
+        <h2 class="region-title">Selecione a sua região</h2>
+        <p class="region-sub">Vamos mostrar os valores na sua moeda.</p>
+        <div class="region-options">
+            <button class="region-btn" onclick="selectRegion('angola')">
+                <span class="region-flag">🇦🇴</span>
+                <div class="region-text">
+                    <span class="region-name">Angola</span>
+                    <span class="region-currency">Kwanza · KZ</span>
+                </div>
+            </button>
+            <button class="region-btn" onclick="selectRegion('brasil')">
+                <span class="region-flag">🇧🇷</span>
+                <div class="region-text">
+                    <span class="region-name">Brasil</span>
+                    <span class="region-currency">Real · R$</span>
+                </div>
+            </button>
+            <button class="region-btn" onclick="selectRegion('europa')">
+                <span class="region-flag">🇪🇺</span>
+                <div class="region-text">
+                    <span class="region-name">Europa</span>
+                    <span class="region-currency">Euro · €</span>
+                </div>
+            </button>
         </div>
-    </header>
+    </div>
+</div>
 
-    <main class="container main-content">
-        <div class="campaign-grid">
-            <section class="campaign-left">
-                <div class="image-container">
-                    <img src="assets/vakinha_main_image.webp" alt="Campanha" class="main-image">
-                </div>
-                
-                <div class="campaign-info">
-                    <span class="category">SAÚDE / TRATAMENTOS</span>
-                    <h1>Me ajuda a salvar a minha vida e da minha bebé</h1>
-                    <p class="campaign-id">ID: 6026620</p>
-                    
-                    <div class="short-description">
-                        Eu nunca imaginei que chegaria a este ponto da minha vida…Sou uma mulher de 35 anos, mãe, e estou vivendo uma das fases mais difíceis e assustadoras da minha história. A minha gravidez, que deveria ser um momento de alegria, transformou-se <a href="#sobre" class="ver-tudo">ver tudo</a>
-                    </div>
-                </div>
-
-                <div class="tabs">
-                    <button class="tab active">Sobre</button>
-                    <button class="tab">Atualizações</button>
-                    <button class="tab">Quem ajudou</button>
-                    <button class="tab">Vakinha Premiada</button>
-                    <button class="tab">Selos recebidos</button>
-                </div>
-
-                <div id="sobre" class="content-section">
-                    <div class="pix-box">
-                        Você pode ajudar via Pix usando a chave: <strong>6026620@vakinha.com.br</strong>
-                    </div>
-                    
-                    <p class="creation-date">Vaquinha criada em: 25/03/2026</p>
-                    
-                    <div class="full-text">
-                        <p>Eu nunca imaginei que chegaria a este ponto da minha vida…Sou uma mulher de 35 anos, mãe, e estou vivendo uma das fases mais difíceis e assustadoras da minha história. A minha gravidez, que deveria ser um momento de alegria, transformou-se numa luta diária pela sobrevivência.</p>
-                        <p>Fui diagnosticada com uma gestação de alto risco. Cada dia é uma incerteza. Cada dor, cada sinal, traz medo. Os médicos foram claros: posso precisar de uma cesariana de emergência a qualquer momento para salvar a minha vida e a do meu bebê.</p>
-                        <p>O mais doloroso não é apenas o risco…É não ter condições financeiras para garantir o tratamento que pode nos salvar. Já passei por momentos de desespero, de chorar em silêncio, de não saber o que fazer. Houve um momento em que precisei de ajuda urgente e, graças a uma clínica que teve compaixão de mim, consegui ser atendida. Mas hoje carrego uma dívida que não tenho como pagar.</p>
-                        <p>Sou uma mãe que só quer viver…Só quer ver seu filho crescer…Só quer ter a chance de cuidar do seu bebê. Mas sozinha… eu não consigo. É muito difícil estar aqui a pedir ajuda. Mas a verdade é que preciso de apoio para:</p>
-                        <ul>
-                            <li>Custear despesas médicas urgentes</li>
-                            <li>Pagar a dívida hospitalar</li>
-                            <li>Garantir segurança para mim e para o meu bebê</li>
-                        </ul>
-                        <p>Qualquer contribuição, por menor que seja, pode fazer a diferença entre o desespero e a esperança. Se você não puder ajudar financeiramente, por favor, partilhe esta campanha. Às vezes, a pessoa certa só precisa ver esta mensagem.</p>
-                        <p>Hoje, eu coloco minha vida nas mãos de Deus…E na solidariedade de pessoas de bom coração. Com lágrimas nos olhos, mas ainda com esperança, Muito obrigada</p>
-                    </div>
-
-                    <div class="pix-footer">
-                        Você também pode contribuir via Pix usando a chave: <strong>6026620@vakinha.com.br</strong>
-                        <button class="btn-copy">Copiar</button>
-                    </div>
-                </div>
-            </section>
-
-            <aside class="campaign-right">
-                <div class="sticky-sidebar">
-                    <div class="stats-card">
-                        <h3>Arrecadado</h3>
-                        <div class="amount">R$ 0,00</div>
-                        <div class="goal">de R$ 58.000,00</div>
-                        
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 0%"></div>
-                        </div>
-
-                        <div class="stats-row">
-                            <span>Corações Recebidos ❤️</span>
-                            <span>2</span>
-                        </div>
-                        <div class="stats-row">
-                            <span>Apoiadores</span>
-                            <span>0</span>
-                        </div>
-
-                        <button class="btn-help">Quero Ajudar</button>
-                        <button class="btn-share">Compartilhar</button>
-                        
-                        <div class="protected">
-                            🛡️ DOAÇÃO PROTEGIDA
-                        </div>
-                    </div>
-
-                    <div class="organizer-card">
-                        <div class="avatar">MS</div>
-                        <div class="organizer-info">
-                            <p class="name">Marcelina Simão</p>
-                            <p class="status">Ativo(a) desde março/2026</p>
-                        </div>
-                    </div>
-                </div>
-            </aside>
+<!-- ===================== HEADER ===================== -->
+<header class="header">
+    <div class="container header-content">
+        <div class="header-brand">
+            <img src="logoanas.png" alt="ANAS" class="logo">
+            <span class="logo-label">Associação Nacional de Apoio Social</span>
         </div>
-    </main>
+        <div class="header-right">
+            <button class="btn-region" id="region-indicator" onclick="changeRegion()">🇦🇴 Angola</button>
+            <button class="btn-header-help" onclick="scrollToDonate()">Quero Ajudar</button>
+        </div>
+    </div>
+</header>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-logo">
-                <img src="assets/vakinha_logo.webp" alt="Vakinha Logo">
-            </div>
-            <div class="footer-grid">
-                <div>
-                    <h4>Links rápidos</h4>
-                    <ul>
-                        <li><a href="#">Quem somos</a></li>
-                        <li><a href="#">Vaquinhas</a></li>
-                        <li><a href="#">Criar vaquinhas</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Fale conosco</h4>
-                    <p>Clique aqui para falar conosco</p>
-                    <p>De Segunda à Sexta Das 9:30 às 17:00</p>
-                </div>
-            </div>
-            <div class="copyright">
-                © 2026 - Todos direitos reservados
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+    <div class="hero-overlay">
+        <div class="container hero-content">
+            <div class="hero-badge">🔴 EMERGÊNCIA EM CURSO</div>
+            <h1 class="hero-title">Benguela em estado crítico após fortes chuvas</h1>
+            <p class="hero-subtitle">Famílias perderam casas, alimentos e segurança.<br>A sua ajuda pode agir agora.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">❤️ <strong id="hero-count">253</strong> pessoas já ajudaram</div>
+                <div class="hero-stat">⚡ Resposta urgente nas próximas 24h</div>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
+
+<!-- ===================== MAIN ===================== -->
+<main class="container main-content" id="donate-section">
+    <div class="campaign-grid">
+
+        <!-- DIREITA — widget de doação (CSS order: aparece primeiro no mobile) -->
+        <aside class="campaign-right">
+            <div class="sticky-sidebar">
+
+                <!-- CARD DE DOAÇÃO -->
+                <div class="donate-card">
+                    <div class="counter-bar">
+                        <div class="counter-main">
+                            <span class="counter-num" id="supporter-count">253</span>
+                            <span class="counter-label">apoiadores</span>
+                        </div>
+                        <div class="counter-badge">⚡ 24h</div>
+                    </div>
+
+                    <div class="social-proof">
+                        ❤️ <span id="social-text">Mais de 253 pessoas já ajudaram</span>
+                    </div>
+
+                    <h3 class="donate-title">Escolha um valor para ajudar:</h3>
+
+                    <div class="amount-grid" id="amount-grid">
+                        <!-- preenchido por JS -->
+                    </div>
+
+                    <div id="checkout-wrapper" class="checkout-wrapper hidden">
+                        <p class="trust-line">🔒 100% vai diretamente para as famílias afetadas</p>
+                        <button class="btn-checkout" onclick="openDonationModal()">Continuar Doação</button>
+                    </div>
+
+                    <div class="protected">🛡️ DOAÇÃO SEGURA E PROTEGIDA</div>
+                </div>
+
+                <!-- FEED DE DOADORES -->
+                <div class="donor-card">
+                    <div class="donor-header">
+                        <span class="donor-header-title">Apoiadores recentes</span>
+                        <span class="live-dot"></span>
+                    </div>
+                    <div class="donor-list" id="donor-list">
+                        <!-- preenchido por JS -->
+                    </div>
+                </div>
+
+                <!-- PARTILHAR -->
+                <button class="btn-share" onclick="handleShare()">Partilhar esta campanha</button>
+
+            </div>
+        </aside>
+
+        <!-- ESQUERDA — conteúdo -->
+        <section class="campaign-left">
+
+            <!-- Regiões aceites -->
+            <div class="payment-card">
+                <div class="payment-header">
+                    <h3 class="payment-title">Doe a partir de qualquer lugar</h3>
+                    <button class="btn-change-region" onclick="changeRegion()">Mudar região</button>
+                </div>
+                <div class="payment-list">
+                    <div class="payment-item">
+                        <span class="payment-flag">🇦🇴</span>
+                        <span class="payment-country">Angola</span>
+                    </div>
+                    <div class="payment-item">
+                        <span class="payment-flag">🇧🇷</span>
+                        <span class="payment-country">Brasil</span>
+                    </div>
+                    <div class="payment-item">
+                        <span class="payment-flag">🇪🇺</span>
+                        <span class="payment-country">Europa</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Descrição -->
+            <div class="description-card">
+                <p>As chuvas intensas em Benguela deixaram dezenas de famílias desalojadas. Casas destruídas, falta de alimentos e condições básicas comprometidas.</p>
+                <p>A ANAS está a atuar diretamente no apoio emergencial — distribuição de alimentos, abrigo temporário, roupas e assistência às comunidades mais afetadas.</p>
+                <p>Cada doação ajuda a levar comida, abrigo e dignidade a quem mais precisa.</p>
+                <p class="desc-highlight">O momento de agir é agora.</p>
+            </div>
+
+            <!-- Organizador -->
+            <div class="organizer-card">
+                <div class="avatar anas-avatar">AN</div>
+                <div class="organizer-info">
+                    <p class="org-name">ANAS</p>
+                    <p class="org-status">Associação Nacional de Apoio Social</p>
+                </div>
+            </div>
+
+        </section>
+    </div>
+</main>
+
+<!-- ===================== MODAL DE CONFIRMAÇÃO ===================== -->
+<div id="donation-modal" class="modal-overlay hidden" onclick="handleDonationOverlay(event)">
+    <div class="modal-card">
+        <button class="modal-close" onclick="closeDonationModal()">✕</button>
+        <div class="modal-heart">❤️</div>
+        <h2 class="modal-title">A sua doação importa.</h2>
+        <div class="modal-amount-box">
+            <span class="modal-amount-label">Valor escolhido</span>
+            <span class="modal-amount-value" id="modal-amount">—</span>
+        </div>
+        <p class="modal-impact" id="modal-impact">pode garantir alimentação básica a uma criança</p>
+        <div class="modal-urgency-box">
+            🚨 Famílias em Benguela aguardam ajuda neste momento
+        </div>
+        <p class="modal-trust">100% vai diretamente para apoio às famílias afetadas</p>
+        <button class="btn-modal-confirm" onclick="goToCheckout()">Confirmar e Ajudar Agora</button>
+        <button class="btn-modal-back" onclick="closeDonationModal()">Escolher outro valor</button>
+    </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-top">
+            <img src="logoanas.png" alt="ANAS" class="footer-logo">
+            <p class="footer-tagline">Juntos pela reconstrução de Benguela.</p>
+        </div>
+        <div class="footer-grid">
+            <div>
+                <h4>Sobre a ANAS</h4>
+                <ul>
+                    <li><a href="#">Quem somos</a></li>
+                    <li><a href="#">Transparência</a></li>
+                    <li><a href="#">Campanhas</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Apoio</h4>
+                <ul>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Fale connosco</h4>
+                <p>Segunda à Sexta</p>
+                <p>9h00 – 17h00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 ANAS — Associação Nacional de Apoio Social. Todos os direitos reservados.
+        </div>
+    </div>
+</footer>
+
+<script>
+// ── CONFIG ────────────────────────────────────────────────
+var CHECKOUT_URL = "TEU_LINK_AQUI";
+
+var REGIONS = {
+    angola: { flag: '🇦🇴', name: 'Angola', symbol: 'KZ', rate: 1,       pos: 'after',  dec: 0 },
+    brasil: { flag: '🇧🇷', name: 'Brasil', symbol: 'R$', rate: 0.0064,  pos: 'before', dec: 2 },
+    europa: { flag: '🇪🇺', name: 'Europa', symbol: '€',  rate: 0.00103, pos: 'before', dec: 2 }
+};
+
+var KZ_AMOUNTS = [3000,5000,10000,15000,20000,25000,35000,40000,50000,55000,70000,75000,80000,90000,100000,200000];
+
+var AVATAR_COLORS = ['#1565c0','#6a1b9a','#c62828','#2e7d32','#e65100','#00838f','#4527a0','#ad1457'];
+
+var DONOR_POOL = [
+    {n:'João M.',      m:'Força Benguela!'},
+    {n:'Maria S.',     m:'Estamos juntos!'},
+    {n:'Pedro A.',     m:null},
+    {n:'Ana C.',       m:'Com vocês sempre.'},
+    {n:'Carlos D.',    m:null},
+    {n:'Sofia L.',     m:'Muita coragem!'},
+    {n:'Miguel F.',    m:null},
+    {n:'Inês R.',      m:'Força!'},
+    {n:'Bruno T.',     m:null},
+    {n:'Catarina N.',  m:'Deus abençoe!'},
+    {n:'Luís G.',      m:null},
+    {n:'Helena B.',    m:'Solidariedade sempre.'},
+    {n:'Rodrigo P.',   m:null},
+    {n:'Marta V.',     m:'Pensando em vocês.'},
+    {n:'António J.',   m:null},
+    {n:'Beatriz O.',   m:'Com carinho.'},
+    {n:'Diogo K.',     m:null},
+    {n:'Rita E.',      m:'Força Benguela!'},
+    {n:'Francisco Q.', m:null},
+    {n:'Margarida H.', m:'Oração por todos!'},
+    {n:'Tiago W.',     m:null},
+    {n:'Filipa Z.',    m:'Juntos somos mais.'},
+    {n:'Nuno X.',      m:null},
+    {n:'Leonor Y.',    m:'Forças!'},
+    {n:'Vítor U.',     m:null},
+    {n:'Conceição B.', m:'Que Deus ajude.'},
+    {n:'Afonso C.',    m:null},
+    {n:'Daniela D.',   m:'Força!'},
+    {n:'Gonçalo E.',   m:null},
+    {n:'Joana F.',     m:'Sempre juntos!'}
+];
+
+var INITIAL_FEED = [
+    {n:'Maria S.',  m:'Força Benguela!',  t:'há 2 min'},
+    {n:'Carlos D.', m:null,               t:'há 5 min'},
+    {n:'Sofia L.',  m:'Estamos juntos!',  t:'há 9 min'},
+    {n:'Pedro A.',  m:null,               t:'há 13 min'}
+];
+
+// ── STATE ─────────────────────────────────────────────────
+var currentRegion    = localStorage.getItem('anas_region') || null;
+var selectedKzValue  = 0;
+var supporterCount   = parseInt(localStorage.getItem('anas_count') || '253');
+var colorIndex       = 0;
+var donorPool        = DONOR_POOL.slice().sort(function(){ return Math.random()-0.5; });
+var donorIndex       = 0;
+
+// ── NUMBERS ───────────────────────────────────────────────
+function fmtNum(n, dec) {
+    var s = n.toFixed(dec);
+    var parts = s.split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return dec > 0 ? parts.join(',') : parts[0];
+}
+
+function formatAmount(kz) {
+    var r = REGIONS[currentRegion || 'angola'];
+    var n = fmtNum(kz * r.rate, r.dec);
+    return r.pos === 'after' ? (n + '\u00A0' + r.symbol) : (r.symbol + '\u00A0' + n);
+}
+
+// ── REGION ────────────────────────────────────────────────
+function selectRegion(key) {
+    currentRegion = key;
+    localStorage.setItem('anas_region', key);
+    document.getElementById('region-modal').style.display = 'none';
+    document.body.style.overflow = '';
+    renderAmountGrid();
+    updateRegionIndicator();
+}
+
+function changeRegion() {
+    document.getElementById('region-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function updateRegionIndicator() {
+    var r = REGIONS[currentRegion || 'angola'];
+    var el = document.getElementById('region-indicator');
+    if (el) el.textContent = r.flag + '\u00A0' + r.name;
+}
+
+// ── AMOUNT GRID ───────────────────────────────────────────
+function renderAmountGrid() {
+    var grid = document.getElementById('amount-grid');
+    var prev = selectedKzValue;
+    grid.innerHTML = '';
+    KZ_AMOUNTS.forEach(function(kz) {
+        var btn = document.createElement('button');
+        btn.className = 'amount-btn' + (kz === prev ? ' active' : '');
+        btn.textContent = formatAmount(kz);
+        btn.addEventListener('click', function() { selectAmount(kz, btn); });
+        grid.appendChild(btn);
+    });
+}
+
+function selectAmount(kz, btn) {
+    selectedKzValue = kz;
+    document.querySelectorAll('.amount-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    var w = document.getElementById('checkout-wrapper');
+    w.classList.remove('hidden');
+    if (window.innerWidth < 992) {
+        setTimeout(function(){ w.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 80);
+    }
+}
+
+// ── DONOR FEED ────────────────────────────────────────────
+function getInitials(name) {
+    var parts = name.replace(/\./g,'').split(' ');
+    return ((parts[0]||'')[0] + ((parts[1]||'')[0]||'')).toUpperCase();
+}
+
+function createDonorItem(name, msg, time, isNew) {
+    var color = AVATAR_COLORS[colorIndex++ % AVATAR_COLORS.length];
+    var div = document.createElement('div');
+    div.className = 'donor-item' + (isNew ? ' donor-new' : '');
+    div.innerHTML =
+        '<div class="donor-av" style="background:' + color + '">' + getInitials(name) + '</div>' +
+        '<div class="donor-info">' +
+            '<span class="donor-name">' + name + '</span>' +
+            (msg ? '<span class="donor-msg">&ldquo;' + msg + '&rdquo;</span>' : '') +
+        '</div>' +
+        '<span class="donor-time">' + time + '</span>';
+    return div;
+}
+
+function initDonorFeed() {
+    var list = document.getElementById('donor-list');
+    INITIAL_FEED.forEach(function(d){
+        list.appendChild(createDonorItem(d.n, d.m, d.t, false));
+    });
+}
+
+function addNewDonor() {
+    if (donorIndex >= donorPool.length) {
+        donorPool.sort(function(){ return Math.random()-0.5; });
+        donorIndex = 0;
+    }
+    var d = donorPool[donorIndex++];
+    var list = document.getElementById('donor-list');
+    var item = createDonorItem(d.n, d.m, 'agora', true);
+    list.insertBefore(item, list.firstChild);
+    var items = list.querySelectorAll('.donor-item');
+    if (items.length > 5) list.removeChild(items[items.length - 1]);
+    setTimeout(function(){ item.classList.remove('donor-new'); }, 600);
+    incrementCounter();
+    setTimeout(addNewDonor, 40000 + Math.random() * 50000);
+}
+
+// ── COUNTER ───────────────────────────────────────────────
+function incrementCounter() {
+    supporterCount++;
+    localStorage.setItem('anas_count', supporterCount);
+    var fmt = fmtNum(supporterCount, 0);
+    var el = document.getElementById('supporter-count');
+    var heroEl = document.getElementById('hero-count');
+    var stEl = document.getElementById('social-text');
+    if (el) { el.textContent = fmt; el.classList.add('count-bump'); setTimeout(function(){ el.classList.remove('count-bump'); }, 400); }
+    if (heroEl) heroEl.textContent = fmt;
+    if (stEl) stEl.textContent = 'Mais de ' + fmt + ' pessoas já ajudaram';
+}
+
+function syncCounter() {
+    var fmt = fmtNum(supporterCount, 0);
+    var el = document.getElementById('supporter-count');
+    var heroEl = document.getElementById('hero-count');
+    var stEl = document.getElementById('social-text');
+    if (el) el.textContent = fmt;
+    if (heroEl) heroEl.textContent = fmt;
+    if (stEl) stEl.textContent = 'Mais de ' + fmt + ' pessoas já ajudaram';
+}
+
+// ── DONATION MODAL ────────────────────────────────────────
+function getImpactMsg(kz) {
+    if (kz <= 5000)   return 'pode garantir alimentação básica a uma criança por dias';
+    if (kz <= 15000)  return 'pode apoiar uma família com alimentos essenciais esta semana';
+    if (kz <= 35000)  return 'pode cobrir necessidades básicas de duas famílias desalojadas';
+    if (kz <= 75000)  return 'pode ajudar a reconstruir um abrigo temporário seguro';
+    if (kz <= 100000) return 'pode transformar completamente a vida de uma família';
+    return 'pode mudar a realidade de várias famílias em Benguela';
+}
+
+function openDonationModal() {
+    if (!selectedKzValue) return;
+    document.getElementById('modal-amount').textContent = formatAmount(selectedKzValue);
+    document.getElementById('modal-impact').textContent = getImpactMsg(selectedKzValue);
+    document.getElementById('donation-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeDonationModal() {
+    document.getElementById('donation-modal').classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+function handleDonationOverlay(e) {
+    if (e.target === e.currentTarget) closeDonationModal();
+}
+
+function goToCheckout() {
+    if (!selectedKzValue) return;
+    window.location.href = CHECKOUT_URL + '?valor=' + selectedKzValue + '&regiao=' + (currentRegion || 'angola');
+}
+
+// ── SHARE ─────────────────────────────────────────────────
+function handleShare() {
+    if (navigator.share) {
+        navigator.share({ title:'Benguela precisa de ajuda', text:'Famílias perderam tudo com as chuvas. Ajude a ANAS.', url: window.location.href });
+    } else {
+        navigator.clipboard && navigator.clipboard.writeText(window.location.href);
+        alert('Link copiado! Partilhe com quem puder ajudar.');
+    }
+}
+
+function scrollToDonate() {
+    document.getElementById('donate-section').scrollIntoView({ behavior:'smooth' });
+}
+
+// ── INIT ──────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+    var saved = localStorage.getItem('anas_region');
+    if (saved && REGIONS[saved]) {
+        currentRegion = saved;
+    } else {
+        document.getElementById('region-modal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+    renderAmountGrid();
+    updateRegionIndicator();
+    initDonorFeed();
+    syncCounter();
+    setTimeout(addNewDonor, 40000 + Math.random() * 50000);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeDonationModal(); });
+});
+</script>
+
 </body>
 </html>
