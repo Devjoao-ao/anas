@@ -8,8 +8,8 @@
     --border:     #e8e8e8;
     --bg:         #f4f5f7;
     --white:      #ffffff;
-    --shadow:     0 2px 12px rgba(0,0,0,0.07);
-    --shadow-lg:  0 6px 28px rgba(0,0,0,0.11);
+    --shadow:     none;
+    --shadow-lg:  none;
     --radius:     12px;
     --pad:        16px;
 }
@@ -232,7 +232,7 @@ img { max-width: 100%; height: auto; display: block; }
     background: var(--white);
     border-radius: var(--radius);
     padding: 20px;
-    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
 }
 
 .payment-header {
@@ -311,7 +311,7 @@ img { max-width: 100%; height: auto; display: block; }
     background: var(--white);
     border-radius: var(--radius);
     padding: 20px;
-    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
 }
 
 /* Counter bar */
@@ -445,7 +445,7 @@ img { max-width: 100%; height: auto; display: block; }
     background: var(--white);
     border-radius: var(--radius);
     padding: 16px 18px;
-    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
     overflow: hidden;
 }
 
@@ -488,16 +488,20 @@ img { max-width: 100%; height: auto; display: block; }
     width: 100%;
     background: var(--white);
     color: var(--text);
-    border: 1.5px solid var(--border);
-    padding: 13px;
-    border-radius: 10px;
+    border: 1px solid var(--border);
+    padding: 14px;
+    border-radius: 12px;
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
     font-family: inherit;
-    transition: border-color 0.2s, color 0.2s, transform 0.1s;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
-.btn-share:hover  { border-color: var(--green); color: var(--green); }
+.btn-share:hover  { border-color: var(--green); color: var(--green); background: #f0fdf4; }
 .btn-share:active { transform: scale(0.98); }
 
 /* ── DONATION MODAL ─────────────────────────────────────── */
@@ -787,37 +791,89 @@ img { max-width: 100%; height: auto; display: block; }
     /* Hero */
     .hero           { min-height: 270px; }
     .hero-overlay   { padding: 36px 0 28px; }
-    .hero-title     { font-size: 21px; line-height: 1.2; letter-spacing: -0.3px; }
-    .hero-subtitle  { font-size: 14px; }
-    .hero-badge     { font-size: 10px; padding: 4px 9px; }
-    .hero-stats     { flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 2px; }
-    .hero-stat      { font-size: 12px; padding: 6px 10px; }
+    .hero-content   { align-items: center; text-align: center; }
+    .hero-title     { font-size: 21px; line-height: 1.2; letter-spacing: -0.3px; margin: 0 auto; }
+    .hero-subtitle  { font-size: 14px; margin: 0 auto; }
+    .hero-badge     { font-size: 10px; padding: 4px 9px; margin: 0 auto; }
+    .hero-stats     { flex-direction: column; align-items: center; gap: 6px; margin-top: 2px; width: 100%; }
+    .hero-stat      { font-size: 12px; padding: 6px 10px; width: fit-content; }
 
     /* Header: padding lateral equilibrado em mobile */
     .header-content { padding-left: 20px; padding-right: 20px; }
     .logo           { height: 38px; }
     .btn-header-help{ padding: 9px 16px; font-size: 13px; }
 
-    /* Donate card */
-    .donate-card    { padding: 16px; }
-    .counter-num    { font-size: 20px; }
-    .counter-label  { font-size: 12px; }
+    /* Estilo App-like (100% responsivo e sem sombras) */
+    .donate-card, .donor-card, .payment-card, .description-card, .organizer-card {
+        box-shadow: none !important;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: var(--white);
+        margin-bottom: 12px;
+        text-align: center;
+    }
 
-    /* Amount grid: 2 colunas, touch-friendly */
-    .amount-grid    { grid-template-columns: repeat(2, 1fr); gap: 7px; }
-    .amount-btn     { height: 50px; font-size: 13px; padding: 0 6px; }
+    .counter-bar {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 14px;
+        justify-content: center;
+        gap: 16px;
+    }
 
-    /* CTA */
-    .btn-checkout   { font-size: 16px; padding: 15px; }
+    .counter-num { font-size: 22px; }
 
-    /* Donor feed */
-    .donor-card     { padding: 14px; }
-    .donor-name     { font-size: 12px; }
-    .donor-msg      { font-size: 11px; }
+    /* Grid de valores otimizado */
+    .amount-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin-bottom: 16px;
+    }
 
-    /* Cards */
-    .payment-card, .description-card, .organizer-card { padding: 16px; }
-    .description-card p { font-size: 14px; }
+    .amount-btn {
+        height: 52px;
+        font-size: 14px;
+        border-radius: 12px;
+        background: #f8f9fa;
+        border: 1px solid var(--border);
+    }
+
+    .amount-btn.active {
+        background: var(--green);
+        color: var(--white);
+        border-color: var(--green);
+        box-shadow: none !important;
+    }
+
+    /* CTA Centralizado e App-like */
+    .btn-checkout {
+        padding: 18px;
+        border-radius: 14px;
+        font-size: 18px;
+        font-weight: 800;
+        animation: none;
+        box-shadow: none !important;
+        margin-top: 5px;
+    }
+
+    .btn-share {
+        margin: 8px auto 0;
+        width: 100%;
+        padding: 16px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        font-size: 15px;
+        background: var(--white);
+    }
+
+    .description-card p { font-size: 15px; line-height: 1.6; text-align: center; }
+
+    /* Payment Header */
+    .payment-header { flex-direction: column; gap: 8px; text-align: center; }
+
+    /* Organizer */
+    .organizer-card { flex-direction: column; gap: 10px; text-align: center; }
+    .organizer-info { align-items: center; display: flex; flex-direction: column; }
 
     /* Footer */
     .footer         { padding: 32px 0 16px; }
@@ -848,9 +904,14 @@ img { max-width: 100%; height: auto; display: block; }
 /* Modal: bottom-sheet mobile, centrado desktop */
 @media (max-width: 600px) {
     .modal-overlay { align-items: flex-end; }
-    .modal-card    { border-radius: 20px 20px 0 0; padding: 24px 18px 28px; }
-    .modal-amount-value { font-size: 22px; }
-    .modal-title   { font-size: 18px; }
+    .modal-card    {
+        border-radius: 28px 28px 0 0;
+        padding: 32px 20px 40px;
+        box-shadow: none !important;
+        border-top: 1px solid var(--border);
+    }
+    .modal-amount-value { font-size: 28px; }
+    .modal-title   { font-size: 20px; }
 }
 
 @media (min-width: 601px) {
