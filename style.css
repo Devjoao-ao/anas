@@ -220,8 +220,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 .campaign-grid {
     display: grid;
-    grid-template-columns: 1fr 370px;
-    gap: 28px;
+    grid-template-columns: 1fr 440px;
+    gap: 32px;
     align-items: start;
 }
 
@@ -344,16 +344,16 @@ img { max-width: 100%; height: auto; display: block; }
 .social-proof {
     background: #f0fdf4;
     border-radius: 8px;
-    padding: 9px 14px;
-    font-size: 13px;
+    padding: 10px 16px;
+    font-size: 14px;
     font-weight: 700;
     color: var(--green);
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 16px;
-    text-align: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 .donate-title {
@@ -713,15 +713,23 @@ img { max-width: 100%; height: auto; display: block; }
 /* Tablet (≤ 992px) */
 @media (max-width: 992px) {
     .campaign-grid  { display: flex; flex-direction: column; }
-    .campaign-right { order: 1; }
-    .campaign-left  { order: 2; }
+    .campaign-right { order: 1; width: 100%; }
+    .campaign-left  { order: 2; width: 100%; }
     .sticky-sidebar { position: static; }
     .logo-label     { display: none; }
     .btn-region     { display: none; }
     .main-content   { padding: 20px 16px 50px; }
 
-    /* Header: menos spread em tablet */
-    .header-content { padding-left: 28px; padding-right: 28px; }
+    /* Header: centralizado para mobile/tablet */
+    .header-content {
+        flex-direction: column;
+        gap: 14px;
+        padding: 15px 20px;
+        text-align: center;
+    }
+    .header-brand, .header-right { justify-content: center; width: 100%; }
+    .logo           { height: 44px; margin: 0 auto; }
+    .btn-header-help{ width: 100%; max-width: 320px; margin: 0 auto; padding: 12px; }
 
     /* Grid de valores: 4 colunas em tablet */
     .amount-grid    { grid-template-columns: repeat(4, 1fr); }
@@ -729,7 +737,9 @@ img { max-width: 100%; height: auto; display: block; }
 
     /* Hero */
     .hero           { min-height: 360px; }
-    .hero-title     { font-size: 30px; }
+    .hero-title     { font-size: 30px; text-align: center; margin: 0 auto; }
+    .hero-subtitle  { font-size: 18px; text-align: center; margin: 0 auto; }
+    .hero-stats     { justify-content: center; width: 100%; }
 }
 
 /* Mobile grande (≤ 768px) */
@@ -763,18 +773,9 @@ img { max-width: 100%; height: auto; display: block; }
     .hero-stats     { flex-direction: column; align-items: center; gap: 6px; margin-top: 2px; width: 100%; }
     .hero-stat      { font-size: 12px; padding: 6px 10px; width: fit-content; }
 
-    /* Header: padding lateral equilibrado em mobile */
-    .header-content {
-        padding-left: 20px;
-        padding-right: 20px;
-        flex-direction: column;
-        gap: 12px;
-        justify-content: center;
-        text-align: center;
-    }
-    .header-brand, .header-right { justify-content: center; width: 100%; }
-    .logo           { height: 42px; margin: 0 auto; }
-    .btn-header-help{ width: 100%; max-width: 280px; padding: 12px; font-size: 14px; margin: 0 auto; }
+    /* Header: já centralizado no 992px */
+    .logo           { height: 40px; }
+    .btn-header-help{ max-width: 280px; }
 
     /* Estilo App-like (100% responsivo e sem sombras) */
     .donate-card, .donor-card, .payment-card, .description-card, .organizer-card {
