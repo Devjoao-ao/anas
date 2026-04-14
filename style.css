@@ -662,45 +662,6 @@ img { max-width: 100%; height: auto; display: block; }
 
 .toast-name { font-weight: 700; }
 
-/* ── FOOTER — BRANCO ────────────────────────────────────── */
-.footer {
-    background: var(--white);
-    border-top: 1px solid var(--border);
-    padding: 44px 0 20px;
-    margin-top: 40px;
-}
-
-.footer-top {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 30px;
-}
-
-.footer-logo    { height: 30px; }
-.footer-tagline { font-size: 13px; color: var(--text-light); }
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.footer-grid h4 { font-size: 13px; font-weight: 700; margin-bottom: 12px; }
-.footer-grid ul { list-style: none; }
-.footer-grid ul li { margin-bottom: 9px; }
-.footer-grid a  { color: var(--text-light); text-decoration: none; font-size: 13px; transition: color 0.2s; }
-.footer-grid a:hover { color: var(--green); }
-.footer-grid p  { font-size: 13px; color: var(--text-light); margin-bottom: 5px; }
-
-.footer-bottom {
-    border-top: 1px solid var(--border);
-    padding-top: 18px;
-    text-align: center;
-    font-size: 12px;
-    color: var(--text-light);
-}
 
 /* ── ANIMATIONS ─────────────────────────────────────────── */
 @keyframes scaleIn {
@@ -799,9 +760,17 @@ img { max-width: 100%; height: auto; display: block; }
     .hero-stat      { font-size: 12px; padding: 6px 10px; width: fit-content; }
 
     /* Header: padding lateral equilibrado em mobile */
-    .header-content { padding-left: 20px; padding-right: 20px; }
-    .logo           { height: 38px; }
-    .btn-header-help{ padding: 9px 16px; font-size: 13px; }
+    .header-content {
+        padding-left: 20px;
+        padding-right: 20px;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        text-align: center;
+    }
+    .header-brand, .header-right { justify-content: center; width: 100%; }
+    .logo           { height: 42px; margin: 0 auto; }
+    .btn-header-help{ width: 100%; max-width: 280px; padding: 12px; font-size: 14px; margin: 0 auto; }
 
     /* Estilo App-like (100% responsivo e sem sombras) */
     .donate-card, .donor-card, .payment-card, .description-card, .organizer-card {
@@ -822,6 +791,11 @@ img { max-width: 100%; height: auto; display: block; }
     }
 
     .counter-num { font-size: 22px; }
+
+    .donor-header { justify-content: center; }
+    .donor-item { flex-direction: column; text-align: center; padding: 12px 0; }
+    .donor-info { align-items: center; }
+    .donor-av { margin: 0 auto; }
 
     /* Grid de valores otimizado */
     .amount-grid {
@@ -869,16 +843,13 @@ img { max-width: 100%; height: auto; display: block; }
     .description-card p { font-size: 15px; line-height: 1.6; text-align: center; }
 
     /* Payment Header */
-    .payment-header { flex-direction: column; gap: 8px; text-align: center; }
+    .payment-header { flex-direction: column; gap: 8px; text-align: center; justify-content: center; }
 
     /* Organizer */
-    .organizer-card { flex-direction: column; gap: 10px; text-align: center; }
+    .organizer-card { flex-direction: column; gap: 10px; text-align: center; justify-content: center; }
     .organizer-info { align-items: center; display: flex; flex-direction: column; }
+    .anas-avatar    { margin: 0 auto; }
 
-    /* Footer */
-    .footer         { padding: 32px 0 16px; }
-    .footer-top     { flex-direction: column; align-items: flex-start; gap: 8px; }
-    .footer-grid    { grid-template-columns: 1fr 1fr; gap: 22px; }
 
     /* Toast: mais compacto */
     .toast          { font-size: 12px; padding: 9px 12px; }
