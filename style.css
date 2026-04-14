@@ -348,8 +348,12 @@ img { max-width: 100%; height: auto; display: block; }
     font-size: 13px;
     font-weight: 700;
     color: var(--green);
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     margin-bottom: 16px;
+    text-align: center;
 }
 
 .donate-title {
@@ -793,9 +797,9 @@ img { max-width: 100%; height: auto; display: block; }
     .counter-num { font-size: 22px; }
 
     .donor-header { justify-content: center; }
-    .donor-item { flex-direction: column; text-align: center; padding: 12px 0; }
-    .donor-info { align-items: center; }
-    .donor-av { margin: 0 auto; }
+    .donor-item { flex-direction: row; text-align: left; padding: 10px 0; }
+    .donor-info { align-items: flex-start; }
+    .donor-av { margin: 0; }
 
     /* Grid de valores otimizado */
     .amount-grid {
